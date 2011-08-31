@@ -1,0 +1,27 @@
+<%- content_for(:head) do -%><%- end -%>
+
+<!-- Masthead (blueprinty thing)
+   ================================================== --> 
+   <div id="masthead"> 
+     <div class="inner"> 
+       <div class="container"> 
+         <h1>Bootstrap, from Twitter</h1> 
+         <p class="lead"> 
+           Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.<br /> 
+           It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.<br /> 
+         </p> 
+         <p><strong>Nerd alert:</strong> Bootstrap is <a href="#less" title="Read about using Bootstrap with Less">built with Less</a> and was designed to work out of the gate with modern browsers in mind.</p> 
+       </div> <!-- /container --> 
+     </div> 
+   </div>
+
+
+<%- content_for(:bottom) do -%>
+	<%= javascript_include_tag "cufon-yui.js" %>
+	<%= javascript_include_tag "Raleway_250.font.js" %>
+	<%= javascript_include_tag "League_Gothic_400.font.js" %>
+	<%= javascript_include_tag :defaults %>
+	<%= javascript_include_tag "font.js" %>
+	<%= javascript_include_tag "jquery.easing-1.3.pack.js" %>
+<%- end -%>
+	
