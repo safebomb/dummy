@@ -68,7 +68,7 @@ img#about-image { float: left; margin: 3px 8px 8px 0px; }
 
 .container { text-align: left; width: 962px; margin: 0 auto; position: relative; }
 
-#header { padding: 0px 0px 0px; background: #ffffff url(../images/header-bottom-bg.png) repeat-x bottom left; height: 45px; }
+#header { padding: 0px 0px 0px; background: #ffffff url(../images/header-bottom-bg.png) repeat-x bottom left; height: 49px; }
 	img#logo { float: left; margin: 0px 23px 0px 0px; }
 	#search-bar { float: right; background: url(../images/search-bg.png) no-repeat; width: 162px; height: 31px; margin-top: 21px; margin-right:6px; }
 		#search-bar #searchinput { background: none; border: none; float: left; margin: 7px 6px 0 0px; width: 112px; padding-left: 10px; font-size: 11px; font-family: Georgia, serif; color: #494949; }

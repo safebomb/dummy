@@ -1384,6 +1384,15 @@ table .headerSortUp.purple, table .headerSortDown.purple {
   color: #808080;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+.topbar span {
+ display: block;
+  float: right;
+  padding: 10px 10px 11px;
+  line-height: 19px;
+  text-decoration: none;
+}
+
 .hero-unit {
   background-color: #f5f5f5;
   margin-top: 60px;
