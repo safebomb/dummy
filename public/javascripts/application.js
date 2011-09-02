@@ -1,40 +1,40 @@
 (function($)
  {
-	
-
-	var activeTarget,
-	      $window = $(window),
-	      position = {},
-	      nav = $('.home > .topbar li a'),
-	      targets = nav.map(function () {
-	        return $(this).attr('href');
-	      });
-	    
 
 
-	  function setButton(id) {
-	    nav.parent("li").removeClass('active');
-	    $(nav[$.inArray(id, targets)]).parent("li").addClass('active');
-	  }
+    var activeTarget,
+    $window = $(window),
+    position = {},
+    nav = $('.home > .topbar li a'),
+    targets = nav.map(function() {
+        return $(this).attr('href');
+    });
 
-	  function processClick(e) {
-	      
-			for(i=0; i< targets.length;i++){
-	        	if(url == targets[i])
-		    	{
-	        		setButton(targets[i]);
-					break;
-				}
-		}
-	     
-	  }
 
-	 
-	    processClick();
-	  
-	
-	
-	
+
+    function setButton(id) {
+        nav.parent("li").removeClass('active');
+        $(nav[$.inArray(id, targets)]).parent("li").addClass('active');
+    }
+
+    function processClick(e) {
+
+        for (i = 0; i < targets.length; i++) {
+            if (url == targets[i])
+            {
+                setButton(targets[i]);
+                break;
+            }
+        }
+
+    }
+
+
+    processClick();
+
+
+
+
     $.fn.et_switcher = function(options)
     {
         var defaults =
@@ -162,7 +162,50 @@
             };
         });
     }
+
+    RPXNOW.init({
+        appId: 'lnlgmifpeoaeoiaabkej',
+        xdReceiver: '/rpx_xdcomm.html'
+    });
+
 })(jQuery);
+
+var finished = function(results) {
+    alert("published" + results);
+}
+
+
+function publishContent(rpxLabel, rpxSummary, rpxLink, rpxLinkText, rpxComment, rpxImageSrc) {
+    RPXNOW.loadAndRun(['Social'],
+    function() {
+        var activity = new RPXNOW.Social.Activity(
+        rpxLabel,
+        rpxLinkText,
+        rpxLink);
+        activity.setUserGeneratedContent(rpxComment);
+        activity.setDescription(rpxSummary);
+        if (document.getElementById('rpxshareimg') != undefined && (rpxImageSrc == '' || rpxImageSrc == null)) {
+            rpxImageSrc = document.getElementById('rpxshareimg').src;
+        }
+        if (rpxImageSrc != '' && rpxImageSrc != null) {
+            var shareImage = new RPXNOW.Social.ImageMediaCollection();
+            shareImage.addImage(rpxImageSrc, rpxLink);
+            activity.setMediaItem(shareImage);
+        }
+        RPXNOW.Social.publishActivity(activity,
+        {
+            finishCallback: function(data) {
+                for (i in data) {
+                    if (data[i].success == true) {
+                        //do something for each share success here
+                        //e.g. recordShare(data[i].provider_name, data[i].provider_activity_url);
+                        }
+                }
+            }
+        });
+    });
+}
+
 
 var $featuredArea = jQuery('#featured #slides');
 
