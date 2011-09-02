@@ -4,7 +4,8 @@ gem 'rails', '3.0.10'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'devise', :git => 'git://github.com/plataformatec/devise', :branch => 'master'
+gem 'devise_rpx_connectable'
 gem 'sqlite3'
 
 # Use unicorn as the web server

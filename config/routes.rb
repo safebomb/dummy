@@ -1,10 +1,14 @@
 Dummy::Application.routes.draw do
   
+  devise_for :users
+
   root :to => "home#index"
 
   match "home/" => "home#index"
   
   match "business/" => "home#business"
+  
+  match "dating/" => "home#dating"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

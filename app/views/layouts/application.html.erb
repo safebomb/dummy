@@ -20,7 +20,7 @@
 				<div class="fill">
 					<div class="container">
 						<h3>
-							<a href="/home"><font color="gray">deal</font><font size="+2" >Jabbers.com</font></a>
+							<a href="/home"><font color="gray"><%= yield(:title) -%></font><font size="+2" >Jabbers.com</font></a>
 						</h3>
 						<ul>
 							<li id="overview" class="active">
@@ -29,10 +29,22 @@
 							<li id="business">
 								<a href="/business">Business</a>
 							</li>
+							<li id="business">
+								<a href="/dating">Dating</a>
+							</li>
 							<li id="about">
 								<a href="#about">About</a>
 							</li>
+
 						</ul>
+						<% if user_signed_in? %>
+    							<%= current_user.email %>. Not you? <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  						<% else %>
+    							<%= link_to_rpx "Sign in", user_session_url %> <%= javascript_include_rpx(user_session_url) %>
+  						<% end %>
+						<p class="notice"><%= notice %></p>
+					        <p class="alert"><%= alert %></p>
+
 					</div>
 				</div>
 			</div>
