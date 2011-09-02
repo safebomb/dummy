@@ -7,6 +7,7 @@ gem 'rails', '3.0.10'
 gem 'devise', :git => 'git://github.com/plataformatec/devise', :branch => 'master'
 gem 'devise_rpx_connectable'
 gem 'sqlite3'
+gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
